@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">GrapeBhumi</string>
+
+    <!-- Navigation Drawer -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Signup Activity -->
+    <string name="txt_enter_name">Enter your name</string>
+    <string name="txt_enter_pass">Enter password</string>
+    <string name="txt_enter_phone">Enter your mobile number</string>
+    <string name="txt_enter_otp">Enter OTP</string>
+    <string name="btn_get_otp">Get OTP</string>
+    <string name="btn_signup">Sign Up</string>
+
+    <!-- Home Activity -->
+
+    <!-- Navigation Header -->
+    <string name="txt_logo_name">Grape Bhumi</string>
+
+    <!-- Navigation Drawer items -->
+    <string name="txt_home">Home</string>
+    <string name="txt_profile">Profile</string>
+    <string name="txt_others">Others</string>
+    <string name="txt_share">Share</string>
+    <string name="txt_contactus">Contact Us</string>
+    <string name="txt_rateus">Rate Us</string>
+    <string name="txt_aboutus">About Us</string>
+    <string name="txt_logout">Logout</string>
+
+    <!-- Bottom Navigation Menu Item -->
+    <string name="txt_btnav_home">Home</string>
+    <string name="txt_btnav_cropcare">Crop Care</string>
+    <string name="txt_btnav_videos">Videos</string>
+    <string name="txt_btnav_weather">Weather</string>
+    <string name="txt_btnav_advice">Advisory</string>
+</resources>
