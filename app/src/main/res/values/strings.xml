@@ -45,5 +45,10 @@
     <string name="aboutus_fragment">Aboutus fragment</string>
     <string name="logout_fragment">Logout Fragmnet</string>
 
+    <string name="bottom_fragment_Home">Home</string>
+    <string name="bottom_fragment_cropcare">Crop Care</string>
+    <string name="bottom_fragment_weather">Weather</string>
+    <string name="bottom_fragment_videos">Videos</string>
+
 
 </resources>

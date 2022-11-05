@@ -2,12 +2,12 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/nav_header"
     android:clickable="true"
     android:focusable="true"
     android:foreground="?attr/selectableItemBackgroundBorderless"
-    android:gravity="center"
+    android:gravity="bottom"
     android:orientation="vertical"
     android:padding="16dp"
     android:background="#49FF00"
@@ -23,12 +23,12 @@
         android:id="@+id/nav_headertxt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="5dp"
+
         android:text="@string/txt_logo_name"
-        android:gravity="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textColor="@color/navy_blue"
         android:fontFamily="@font/font_regular"
+        android:layout_gravity="start"
         android:textStyle="bold" />
 
 </LinearLayout>
