@@ -17,7 +17,8 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:id="@+id/nav_imgView"
-        android:src="@drawable/logo_img"/>
+        android:src="@drawable/logo_img"
+        android:elevation="5dp"/>
 
     <TextView
         android:id="@+id/nav_headertxt"

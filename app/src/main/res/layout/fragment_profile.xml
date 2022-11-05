@@ -1,17 +1,159 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ProfileFragment">
+    android:scrollbars="vertical"
+    tools:context=".ProfileFragment"
+    android:scrollbarSize="0dp"
+    tools:ignore="SpeakableTextPresentCheck">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/profile_fragment"
-        android:textSize="20sp"
-        android:gravity="center"
-        android:textColor="@color/black" />
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
 
-</FrameLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/profile_backimg"
+            tools:ignore="ImageContrastCheck" />
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:id="@+id/img"
+            android:src="@drawable/logo_img"
+            android:scaleType="fitXY"
+            android:background="@drawable/round_button"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="35dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@id/img"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_username"
+                android:text="Full name"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ed_name"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular"
+                android:autofillHints="username"
+                android:layout_marginVertical="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_phone"
+                android:text="Mobile Number"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ed_phone"
+                android:autofillHints="phone"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular"
+                android:layout_marginVertical="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_state"
+                android:text="State"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular" />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:elevation="2dp"
+                android:id="@+id/spinner_state"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular"
+                android:layout_marginVertical="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_district"
+                android:text="District"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular"
+                />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:elevation="2dp"
+                android:id="@+id/spinner_district"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular"
+                android:layout_marginVertical="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_taluka"
+                android:text="Taluka"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular"
+                />
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:elevation="2dp"
+                android:id="@+id/spinner_taluka"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular"
+                android:layout_marginVertical="10dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txt_village"
+                android:text="Village"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular"
+                />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ed_village"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/font_regular"
+                android:layout_marginVertical="10dp"/>
+            <Button
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/button"
+                android:layout_marginTop="10dp"
+                android:text="Submit"
+                android:textSize="20sp"
+                android:fontFamily="@font/font_regular"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</ScrollView>

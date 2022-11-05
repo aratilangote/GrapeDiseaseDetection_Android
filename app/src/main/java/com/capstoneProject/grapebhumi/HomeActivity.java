@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -27,7 +28,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity {
-
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
     private TextView txtView;
@@ -35,8 +35,6 @@ public class HomeActivity extends AppCompatActivity {
     ActionBarDrawerToggle drawerToggle;
     DrawerLayout drawer;
     Toolbar toolbar;
-
-
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -57,8 +55,7 @@ public class HomeActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer);
-        drawerToggle = new ActionBarDrawerToggle(this, drawer, toolbar,
-                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawerToggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
@@ -76,19 +73,22 @@ public class HomeActivity extends AppCompatActivity {
                         temp = new ProfileFragment();
                         break;
                     case R.id.nav_share:
-                        temp = new ShareFragment();
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.putExtra(Intent.EXTRA_TEXT, "http://javatpoint.com");
+                        intent.setType("text/plain");
+                        startActivity(Intent.createChooser(intent,"Share via"));
                         break;
-                    case R.id.nav_contactUs:
-                        temp = new ContactusFragment();
+                    case R.id.nav_privacypolicy:
+                        temp = new PrivacyPolicyFragment();
                         break;
-                    case R.id.nav_rateUs:
-                        temp = new RateusFragment();
+                    case R.id.nav_termsconditions:
+                        temp = new TermsConditionsFragment();
                         break;
                     case R.id.nav_aboutUs:
                         temp = new AboutusFragment();
                         break;
                     case R.id.nav_Logout:
-                        temp = new LogoutFragment();
+
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, temp).commit();

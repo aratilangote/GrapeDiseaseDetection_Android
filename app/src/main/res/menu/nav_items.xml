@@ -20,13 +20,13 @@
                         android:icon="@drawable/ic_share"
                         android:title="@string/txt_share"/>
                     <item
-                        android:id="@+id/nav_rateUs"
-                        android:icon="@drawable/ic_rateus"
-                        android:title="@string/txt_rateus" />
+                        android:id="@+id/nav_privacypolicy"
+                        android:icon="@drawable/ic_privacypolicy"
+                        android:title="@string/txt_privacypolicy" />
                     <item
-                        android:id="@+id/nav_contactUs"
-                        android:icon="@drawable/ic_contactus"
-                        android:title="@string/txt_contactus" />
+                        android:id="@+id/nav_termsconditions"
+                        android:icon="@drawable/ic_terms"
+                        android:title="@string/txt_termscondictions" />
                     <item
                         android:id="@+id/nav_aboutUs"
                         android:icon="@drawable/ic_aboutus"

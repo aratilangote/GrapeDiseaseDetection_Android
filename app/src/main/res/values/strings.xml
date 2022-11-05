@@ -23,8 +23,8 @@
     <string name="txt_profile">Profile</string>
     <string name="txt_others">Others</string>
     <string name="txt_share">Share</string>
-    <string name="txt_contactus">Contact Us</string>
-    <string name="txt_rateus">Rate Us</string>
+    <string name="txt_privacypolicy">Privacy Policy</string>
+    <string name="txt_termscondictions">Terms &amp; conditions</string>
     <string name="txt_aboutus">About Us</string>
     <string name="txt_logout">Logout</string>
 
@@ -40,8 +40,7 @@
     <string name="home_fragment">Hello home fragment</string>
     <string name="profile_fragment">Hello profile fragment</string>
     <string name="share_fragment">Hello share fragment</string>
-    <string name="rateus_fragment">Rateus fragment</string>
-    <string name="contactus_fragment">Contactus fragment</string>
+
     <string name="aboutus_fragment">Aboutus fragment</string>
     <string name="logout_fragment">Logout Fragmnet</string>
 
@@ -49,6 +48,8 @@
     <string name="bottom_fragment_cropcare">Crop Care</string>
     <string name="bottom_fragment_weather">Weather</string>
     <string name="bottom_fragment_videos">Videos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
