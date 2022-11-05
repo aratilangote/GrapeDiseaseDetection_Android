@@ -34,4 +34,16 @@
     <string name="txt_btnav_videos">Videos</string>
     <string name="txt_btnav_weather">Weather</string>
     <string name="txt_btnav_advice">Advisory</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="home_fragment">Hello home fragment</string>
+    <string name="profile_fragment">Hello profile fragment</string>
+    <string name="share_fragment">Hello share fragment</string>
+    <string name="rateus_fragment">Rateus fragment</string>
+    <string name="contactus_fragment">Contactus fragment</string>
+    <string name="aboutus_fragment">Aboutus fragment</string>
+    <string name="logout_fragment">Logout Fragmnet</string>
+
+
 </resources>

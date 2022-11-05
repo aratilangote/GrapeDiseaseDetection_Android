@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -25,18 +26,16 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
-public class HomeActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+public class HomeActivity extends AppCompatActivity {
 
     private BottomNavigationView bottomNavigationView;
     private FrameLayout frameLayout;
     private TextView txtView;
     NavigationView navView;
+    ActionBarDrawerToggle drawerToggle;
     DrawerLayout drawer;
     Toolbar toolbar;
 
-    //Adapterimage flipper
-    AdapterViewFlipper adapter;
-    private static final int[] images = {R.drawable.farm, R.drawable.grape_farm, R.drawable.grapegrowth, R.drawable.grape_types};
 
 
     @SuppressLint("MissingInflatedId")
@@ -58,19 +57,46 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer);
-        ActionBarDrawerToggle drawerToggle = new ActionBarDrawerToggle(this, drawer, toolbar,
+        drawerToggle = new ActionBarDrawerToggle(this, drawer, toolbar,
                 R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(drawerToggle);
         drawerToggle.syncState();
 
         navView = findViewById(R.id.nav_drawer);
-        navView.setNavigationItemSelectedListener(this);
 
-        //Adapterimage flipper
-        adapter = findViewById(R.id.adptflipper);
-        ViewFlipperAdapter viewFlipper = new ViewFlipperAdapter(this, images);
-        adapter.setAdapter(viewFlipper);
-        adapter.setAutoStart(true);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+           Fragment temp;
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.nav_home:
+                        temp = new HomeFragment();
+                        break;
+                    case R.id.nav_profile:
+                        temp = new ProfileFragment();
+                        break;
+                    case R.id.nav_share:
+                        temp = new ShareFragment();
+                        break;
+                    case R.id.nav_contactUs:
+                        temp = new ContactusFragment();
+                        break;
+                    case R.id.nav_rateUs:
+                        temp = new RateusFragment();
+                        break;
+                    case R.id.nav_aboutUs:
+                        temp = new AboutusFragment();
+                        break;
+                    case R.id.nav_Logout:
+                        temp = new LogoutFragment();
+                        break;
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container, temp).commit();
+                drawer.closeDrawer(GravityCompat.START);
+                return true;
+            }
+        });
+
     }
     private BottomNavigationView.OnNavigationItemSelectedListener nav = new BottomNavigationView.OnNavigationItemSelectedListener() {
         @Override
@@ -96,74 +122,4 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }
     };
-
-
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.nav_home:
-                Toast.makeText(this, "Home", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_profile:
-                Toast.makeText(this, "Profile", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_share:
-                Toast.makeText(this, "Share", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_contactUs:
-                Toast.makeText(this, "Contact Us", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_rateUs:
-                Toast.makeText(this, "Rate Us", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_aboutUs:
-                Toast.makeText(this, "About Us", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.nav_Logout:
-                Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
-                break;
-        }
-        drawer.closeDrawer(GravityCompat.START);
-        return true;
-    }
-
-    //Adapterimage flipper
-    class ViewFlipperAdapter extends BaseAdapter {
-        Context context;
-        int[] images;
-
-        LayoutInflater inflater;
-
-        public ViewFlipperAdapter(Context mycontext, int[] myimages){
-            this.context = mycontext;
-            this.images = myimages;
-
-            inflater = LayoutInflater.from(context);
-        }
-
-        @Override
-        public int getCount() {
-            return 4;
-        }
-
-        @Override
-        public Object getItem(int i) {
-            return null;
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return 0;
-        }
-
-        @Override
-        public View getView(int position, View view, ViewGroup viewGroup) {
-            view = inflater.inflate(R.layout.activity_adapterimages, null);
-
-            ImageView img = view.findViewById(R.id.imgs);
-
-            img.setImageResource(images[position]);
-            return view;
-        }
-    }
 }

@@ -14,26 +14,28 @@
             android:title="@string/txt_profile" />
         <item android:title="@string/txt_others">
             <menu>
-                <item
-                    android:id="@+id/nav_share"
-                    android:icon="@drawable/ic_share"
-                    android:title="@string/txt_share"/>
-                <item
-                    android:id="@+id/nav_rateUs"
-                    android:icon="@drawable/ic_rateus"
-                    android:title="@string/txt_rateus" />
-                <item
-                    android:id="@+id/nav_contactUs"
-                    android:icon="@drawable/ic_contactus"
-                    android:title="@string/txt_contactus" />
-                <item
-                    android:id="@+id/nav_aboutUs"
-                    android:icon="@drawable/ic_aboutus"
-                    android:title="@string/txt_aboutus" />
-                <item
-                    android:id="@+id/nav_Logout"
-                    android:icon="@drawable/ic_logout"
-                    android:title="@string/txt_logout" />
+                <group android:checkableBehavior="single">
+                    <item
+                        android:id="@+id/nav_share"
+                        android:icon="@drawable/ic_share"
+                        android:title="@string/txt_share"/>
+                    <item
+                        android:id="@+id/nav_rateUs"
+                        android:icon="@drawable/ic_rateus"
+                        android:title="@string/txt_rateus" />
+                    <item
+                        android:id="@+id/nav_contactUs"
+                        android:icon="@drawable/ic_contactus"
+                        android:title="@string/txt_contactus" />
+                    <item
+                        android:id="@+id/nav_aboutUs"
+                        android:icon="@drawable/ic_aboutus"
+                        android:title="@string/txt_aboutus" />
+                    <item
+                        android:id="@+id/nav_Logout"
+                        android:icon="@drawable/ic_logout"
+                        android:title="@string/txt_logout" />
+                </group>
             </menu>
         </item>
     </group>
