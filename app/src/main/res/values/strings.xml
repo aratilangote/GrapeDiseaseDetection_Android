@@ -13,7 +13,9 @@
     <string name="btn_get_otp">Get OTP</string>
     <string name="btn_signup">Sign Up</string>
 
-    <!-- Home Activity -->
+    <!-- Home Fragment -->
+    <string name="home_frag_crop">Diagnose and treat your crop</string>
+    <string name="home_frag_weather">Check Current Weather Conditions</string>
 
     <!-- Navigation Header -->
     <string name="txt_logo_name">Grape Bhumi</string>

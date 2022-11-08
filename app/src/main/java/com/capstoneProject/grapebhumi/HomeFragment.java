@@ -14,6 +14,7 @@ import android.widget.AdapterViewFlipper;
 import android.widget.BaseAdapter;
 import android.widget.CursorAdapter;
 import android.widget.ImageView;
+import android.widget.ViewFlipper;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,10 +24,7 @@ import android.widget.ImageView;
 public class HomeFragment extends Fragment {
 
     //AdapterViewFlipper
-    AdapterViewFlipper adaptFlipper;
-    private static final int[] images = {R.drawable.farm, R.drawable.grape_farm, R.drawable.grapegrowth, R.drawable.grape_types};
-
-
+    ViewFlipper viewFlipper;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -81,42 +79,22 @@ public class HomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         //AdapterViewFlipper
-        adaptFlipper = view.findViewById(R.id.adptflipper);
-        ViewFlipperAdapter viewFlipper = new ViewFlipperAdapter(getContext(), images);
-        adaptFlipper.setAdapter(viewFlipper);
-        adaptFlipper.setFlipInterval(1000);
-        adaptFlipper.setAutoStart(true);
-    }
-
-    //AdapterViewFlipper viewFlipper custom class
-    class ViewFlipperAdapter extends BaseAdapter{
-        Context context;
-        int[] images;
-        LayoutInflater inflater;
-
-        public ViewFlipperAdapter(Context mycontext, int[] myimages){
-            this.context = mycontext;
-            this.images = myimages;
-            inflater = LayoutInflater.from(mycontext);
-        }
-
-        @Override
-        public int getCount() {return 4;}
-
-        @Override
-        public Object getItem(int i) {return null;}
-
-        @Override
-        public long getItemId(int i) {return 0;}
-
-        @Override
-        public View getView(int position, View view, ViewGroup viewGroup) {
-            view = inflater.inflate(R.layout.activity_adapterimages, null);
-
-            ImageView imageView = view.findViewById(R.id.flip_imgs);
-            imageView.setImageResource(images[position]);
-            return view;
+        int[] images = {R.drawable.farm, R.drawable.grape_farm, R.drawable.grapegrowth, R.drawable.grape_types};
+        viewFlipper = view.findViewById(R.id.view_flipper);
+        for(int i=0; i<images.length; i++){
+            flipperImages(images[i]);
         }
     }
+
+    private void flipperImages(int images) {
+        ImageView imageView = new ImageView(getContext());
+        imageView.setBackgroundResource(images);
+        viewFlipper.addView(imageView);
+        viewFlipper.setFlipInterval(2000);
+        viewFlipper.setAutoStart(true);
+        viewFlipper.setInAnimation(getContext(), android.R.anim.slide_in_left);
+        viewFlipper.setInAnimation(getContext(), android.R.anim.slide_out_right);
+    }
+
 
 }

@@ -79,7 +79,8 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(Intent.createChooser(intent,"Share via"));
                         break;
                     case R.id.nav_privacypolicy:
-                        temp = new PrivacyPolicyFragment();
+                        Intent intent1 = new Intent(HomeActivity.this, PrivacyPolicyFragment.class);
+                        startActivity(intent1);
                         break;
                     case R.id.nav_termsconditions:
                         temp = new TermsConditionsFragment();
