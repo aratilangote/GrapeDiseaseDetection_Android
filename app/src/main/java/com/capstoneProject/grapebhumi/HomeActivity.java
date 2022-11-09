@@ -46,10 +46,6 @@ public class HomeActivity extends AppCompatActivity {
         txtView = findViewById(R.id.txt_demo);
         frameLayout = findViewById(R.id.frame_container);
 
-        frameLayout.setBackgroundColor(Color.CYAN);
-        txtView.setText("Home");
-        bottomNavigationView.setOnNavigationItemSelectedListener(nav);
-
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("Navigation Drawer");
         setSupportActionBar(toolbar);
@@ -100,6 +96,7 @@ public class HomeActivity extends AppCompatActivity {
 
     }
     private BottomNavigationView.OnNavigationItemSelectedListener nav = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()){
@@ -108,8 +105,7 @@ public class HomeActivity extends AppCompatActivity {
                     txtView.setText("Home");
                     break;
                 case R.id.nav_crop_Care:
-                    frameLayout.setBackgroundColor(Color.RED);
-                    txtView.setText("Crop Care");
+                    startActivity(new Intent(HomeActivity.this, BottomCropCareFragment.class));
                     break;
                 case R.id.nav_video:
                     frameLayout.setBackgroundColor(Color.GREEN);

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "207888470467",
+    "project_id": "grapediseaseapp",
+    "storage_bucket": "grapediseaseapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:207888470467:android:dc2589345690d465402d76",
+        "android_client_info": {
+          "package_name": "com.capstoneProject.grapebhumi"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "207888470467-olds042m9fkmdce23je1oe3dbblpkn45.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.capstoneProject.grapebhumi",
+            "certificate_hash": "88e0defe9ed5f1d73db0c6b520dfc35b14f04a3c"
+          }
+        },
+        {
+          "client_id": "207888470467-h5kh5nrsd53pmcmhvhvvojbm1okmmv9q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYOljZDMo4T02GPhqN1WB2MRqvAAsAE88"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "207888470467-h5kh5nrsd53pmcmhvhvvojbm1okmmv9q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
