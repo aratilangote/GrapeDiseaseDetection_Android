@@ -29,8 +29,6 @@ import com.google.android.material.navigation.NavigationView;
 
 public class HomeActivity extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView;
-    private FrameLayout frameLayout;
-    private TextView txtView;
     NavigationView navView;
     ActionBarDrawerToggle drawerToggle;
     DrawerLayout drawer;
@@ -43,11 +41,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         bottomNavigationView = findViewById(R.id.bottom_nav);
-        txtView = findViewById(R.id.txt_demo);
-        frameLayout = findViewById(R.id.frame_container);
 
         toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Navigation Drawer");
         setSupportActionBar(toolbar);
 
         drawer = findViewById(R.id.drawer);
@@ -94,29 +89,29 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-    }
-    private BottomNavigationView.OnNavigationItemSelectedListener nav = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()){
-                case R.id.nav_home:
-                    frameLayout.setBackgroundColor(Color.CYAN);
-                    txtView.setText("Home");
-                    break;
-                case R.id.nav_crop_Care:
-                    startActivity(new Intent(HomeActivity.this, BottomCropCareFragment.class));
-                    break;
-                case R.id.nav_video:
-                    frameLayout.setBackgroundColor(Color.GREEN);
-                    txtView.setText("Videos");
-                    break;
-                case R.id.nav_weather:
-                    frameLayout.setBackgroundColor(Color.GRAY);
-                    txtView.setText("Weather");
-                    break;
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            Fragment temp2;
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.nav_home:
+                        temp2 =new HomeFragment();
+                        break;
+                    case R.id.nav_crop_Care:
+                        temp2 = new BottomCropCareFragment();
+                        break;
+                    case R.id.nav_video:
+                        temp2 = new BottomVideosFragment();
+                        break;
+                    case R.id.nav_weather:
+                        temp2 = new BottomWeatherFragment();
+                        break;
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.frag_container,temp2).commit();
+                return true;
             }
-            return true;
-        }
-    };
+        });
+
+    }
 }

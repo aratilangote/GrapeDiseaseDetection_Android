@@ -45,7 +45,7 @@ public class SignupActivity extends AppCompatActivity {
         btnSignup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                startActivity(new Intent(SignupActivity.this, HomeActivity.class));
                 if(!validateName() | !validatePassword() | !validatePhone()){
                     return;
                 }else{

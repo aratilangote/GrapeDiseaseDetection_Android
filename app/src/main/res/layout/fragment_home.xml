@@ -14,13 +14,18 @@
         android:orientation="vertical"
         android:layout_margin="5dp">
 
-        <ViewFlipper
-            android:layout_width="match_parent"
-            android:layout_height="220dp"
-            android:id="@+id/view_flipper"
-            android:background="@android:drawable/dialog_holo_light_frame"
-            android:layout_gravity="top"
-            android:elevation="5dp"/>
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="5dp"
+            android:elevation="10dp">
+            <AdapterViewFlipper
+                android:layout_width="wrap_content"
+                android:layout_height="200dp"
+                android:id="@+id/adptflipper"
+                android:flipInterval="2000"
+                android:layout_gravity="top" />
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"

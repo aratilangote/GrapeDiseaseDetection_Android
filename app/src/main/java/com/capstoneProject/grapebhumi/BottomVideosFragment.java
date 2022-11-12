@@ -11,6 +11,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.YouTubePlayer;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.listeners.AbstractYouTubePlayerListener;
+import com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView;
 
 import java.util.ArrayList;
 
@@ -22,6 +27,21 @@ import java.util.ArrayList;
 public class BottomVideosFragment extends Fragment {
 
     //Videos
+    LinearLayout root;
+
+    String[] list = {
+            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
+            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
+            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
+            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
+            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
+            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
+            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
+            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
+            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
+            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
+    };
+
 
 
     // TODO: Rename parameter arguments, choose names that match
@@ -68,7 +88,24 @@ public class BottomVideosFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bottom_videos, container, false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_bottom_videos, null);
+
+        root = view.findViewById(R.id.root);
+        for (String item : list) {
+            View v = LayoutInflater.from(getContext()).inflate(R.layout.videoview, null);
+            YouTubePlayerView player = v.findViewById(R.id.videoPlayer);
+            getLifecycle().addObserver(player);
+
+            player.addYouTubePlayerListener(new AbstractYouTubePlayerListener() {
+                @Override
+                public void onReady(@NonNull YouTubePlayer youTubePlayer) {
+                    youTubePlayer.loadVideo(item, 0);
+                }
+            });
+            root.addView(v);
+        }
+
+        return view;
     }
 
     @Override

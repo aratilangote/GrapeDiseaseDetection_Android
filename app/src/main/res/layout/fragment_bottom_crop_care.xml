@@ -8,40 +8,21 @@
 
     <LinearLayout
         android:id="@+id/linearlayout"
-        android:layout_width="150dp"
-        android:layout_height="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="-8dp"
-        android:background="@drawable/rect"
+        android:layout_marginBottom="100dp"
         android:elevation="2dp"
         android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
+        <Button
+            android:id="@+id/btn"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Take Action"
-            android:textSize="17sp"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/black"
-            android:gravity="center_horizontal"
-            android:textStyle="bold"/>
-        <LinearLayout
-            android:layout_width="100dp"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <Button
-                android:id="@+id/btn"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="8dp"
-                android:background="@drawable/camera"
-                tools:ignore="SpeakableTextPresentCheck" />
-        </LinearLayout>
-
+            android:layout_marginHorizontal="8dp"
+            android:text="Take Picture"
+            android:textSize="20sp"
+            android:fontFamily="@font/font_regular"
+             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -122,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/clickhere"
-                android:text="Click to result to know"
+                android:text="Click on result to know"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="15sp"
