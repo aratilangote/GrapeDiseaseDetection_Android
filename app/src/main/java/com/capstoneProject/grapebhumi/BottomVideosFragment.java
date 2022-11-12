@@ -30,16 +30,21 @@ public class BottomVideosFragment extends Fragment {
     LinearLayout root;
 
     String[] list = {
-            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
-            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
-            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
-            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
-            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
-            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
-            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
-            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
-            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
-            "https://www.youtube.com/watch?v=KwBmdyIU6bo",
+            "https://youtu.be/Iy0E5McxE3A",
+            "https://youtu.be/ejhkk0_BNns",
+            "https://youtu.be/fPVGuvENhlA",
+            "https://youtu.be/FSYb2q8FZE0",
+            "https://youtu.be/Iwn-3xKZOhg",
+            "https://youtu.be/1uVdjCcgt_0",
+            "https://youtu.be/dQIzI5aTTIk",
+            "https://youtu.be/hhz7boG4JNg",
+            "https://youtu.be/xtbVblyT-hc",
+            "https://youtu.be/1rXl_Cb6y4s",
+            "https://youtu.be/A5-YiIQCFjo",
+            "https://youtu.be/Np8jtzVT_WY",
+            "https://youtu.be/J9eJ9vNJNIE",
+            "https://youtu.be/Eu_oHN4S6tc",
+            "https://youtu.be/_7SQY-q_o_I"
     };
 
 
