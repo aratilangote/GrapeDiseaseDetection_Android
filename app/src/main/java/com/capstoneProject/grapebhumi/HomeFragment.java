@@ -1,6 +1,7 @@
 package com.capstoneProject.grapebhumi;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterViewFlipper;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CursorAdapter;
 import android.widget.ImageView;
 import android.widget.ViewFlipper;
@@ -26,6 +28,8 @@ public class HomeFragment extends Fragment {
     //AdapterViewFlipper
     AdapterViewFlipper adaptFlipper;
     private static final int[] images = {R.drawable.farm, R.drawable.grape_farm, R.drawable.grapegrowth, R.drawable.grape_types};
+
+    Button btn_arrow_cropcare, btn_arrow_weather;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -79,6 +83,26 @@ public class HomeFragment extends Fragment {
         adaptFlipper.setAdapter(viewFlipper);
         adaptFlipper.setFlipInterval(1000);
         adaptFlipper.setAutoStart(true);
+
+
+        btn_arrow_cropcare = view.findViewById(R.id.btn_arrow_cropcare);
+        btn_arrow_weather = view.findViewById(R.id.btn_arrow_weather);
+
+        btn_arrow_cropcare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(view.getContext(), BottomCropCareFragment.class);
+                view.getContext().startActivity(intent);
+            }
+        });
+
+        btn_arrow_weather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent1 = new Intent(view.getContext(), BottomWeatherFragment.class);
+                view.getContext().startActivity(intent1);
+            }
+        });
     }
 
 

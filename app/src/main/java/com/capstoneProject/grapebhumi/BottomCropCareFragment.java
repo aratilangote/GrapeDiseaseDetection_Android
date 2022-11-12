@@ -52,7 +52,7 @@ public class BottomCropCareFragment extends Fragment {
     private String mParam2;
 
     TextView resulttxt, demotxt, classified, clickhere;
-    ImageView imageView, arrowview;
+    ImageView imageView;
     Button picture;
 
     int imagesize = 256;
@@ -69,7 +69,6 @@ public class BottomCropCareFragment extends Fragment {
 
                         demotxt.setVisibility(View.GONE);
                         clickhere.setVisibility(View.VISIBLE);
-                        arrowview.setVisibility(View.GONE);
                         classified.setVisibility(View.VISIBLE);
                         resulttxt.setVisibility(View.VISIBLE);
 
@@ -126,12 +125,10 @@ public class BottomCropCareFragment extends Fragment {
 
         demotxt = view.findViewById(R.id.demotxt);
         clickhere = view.findViewById(R.id.clickhere);
-        arrowview = view.findViewById(R.id.arrow);
         classified = view.findViewById(R.id.classified);
 
         demotxt.setVisibility(View.VISIBLE);
         clickhere.setVisibility(View.GONE);
-        arrowview.setVisibility(View.VISIBLE);
         classified.setVisibility(View.GONE);
         resulttxt.setVisibility(View.GONE);
 

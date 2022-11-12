@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/profile_backimg"
     tools:context=".BottomCropCareFragment">
 
     <LinearLayout
@@ -11,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="150dp"
         android:elevation="2dp"
         android:orientation="vertical">
         <Button
@@ -21,7 +20,9 @@
             android:layout_marginHorizontal="8dp"
             android:text="Take Picture"
             android:textSize="20sp"
+            android:textColor="@color/white"
             android:fontFamily="@font/font_regular"
+            android:background="@color/green"
              />
     </LinearLayout>
     <LinearLayout
@@ -59,17 +60,10 @@
                 android:visibility="gone"
                 android:text="Import your image using camera"
                 android:textColor="@color/black"
-                android:textSize="15sp"
+                android:textSize="20sp"
+                android:gravity="center"
                 android:lineSpacingMultiplier="0.9"
                 android:justificationMode="inter_word"/>
-            <ImageView
-                android:layout_width="170dp"
-                android:layout_height="200dp"
-                android:id="@+id/arrow"
-                android:src="@drawable/arrow"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                android:visibility="gone"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -82,7 +76,6 @@
                 android:layout_marginEnd="16dp"
                 android:textAlignment="center"
                 android:textColor="@color/black"/>
-
             <TextView
                 android:id="@+id/result"
                 android:layout_width="match_parent"

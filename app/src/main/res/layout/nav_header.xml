@@ -2,7 +2,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="200dp"
     android:id="@+id/nav_header"
     android:clickable="true"
     android:focusable="true"
@@ -10,7 +10,7 @@
     android:gravity="bottom"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#49FF00"
+    android:background="@color/green"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
     <ImageView
