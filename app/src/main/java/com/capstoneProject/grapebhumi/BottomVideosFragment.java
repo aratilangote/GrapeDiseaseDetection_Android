@@ -44,8 +44,6 @@ public class BottomVideosFragment extends Fragment {
             "https://youtu.be/_7SQY-q_o_I"
     };
 
-
-
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -113,7 +111,5 @@ public class BottomVideosFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-
     }
 }

@@ -6,12 +6,17 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!-- Signup Activity -->
+    <string name="txt_welcome">Welcome!</string>
     <string name="txt_enter_name">Enter your name</string>
     <string name="txt_enter_pass">Enter password</string>
     <string name="txt_enter_phone">Enter your mobile number</string>
     <string name="txt_enter_otp">Enter OTP</string>
     <string name="btn_get_otp">Get OTP</string>
     <string name="btn_signup">Sign Up</string>
+    <string name="txt_forgot_pass">Forgot Password?</string>
+    <string name="txt_or">OR</string>
+    <string name="txt_signup_with">Sign up with</string>
+
 
     <!-- Home Fragment -->
     <string name="home_frag_crop">Diagnose and treat your crop</string>
@@ -36,6 +41,17 @@
     <string name="txt_btnav_videos">Videos</string>
     <string name="txt_btnav_weather">Weather</string>
     <string name="txt_btnav_advice">Advisory</string>
+
+    <!-- Profile Fragment -->
+    <string name="txt_full_name">Full name</string>
+    <string name="hint_name">Alex John</string>
+    <string name="txt_mobile_number">Mobile Number</string>
+    <string name="hint_mobile_number">9876543210</string>
+    <string name="txt_state">State</string>
+    <string name="txt_district">District</string>
+    <string name="txt_taluka">Taluka</string>
+    <string name="txt_village">Village</string>
+    <string name="txt_save_profile">Save Profile</string>
 
 
     <!-- TODO: Remove or change this placeholder text -->

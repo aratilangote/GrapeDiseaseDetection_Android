@@ -8,10 +8,11 @@
     tools:context=".MainActivity"
     android:background="@color/white">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/splash_img"
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginHorizontal="10dp"
+        android:background="@drawable/splash_gif"
         />
 
 </LinearLayout>

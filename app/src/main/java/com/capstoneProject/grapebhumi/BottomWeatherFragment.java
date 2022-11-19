@@ -1,7 +1,6 @@
 package com.capstoneProject.grapebhumi;
 
 import android.annotation.SuppressLint;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -46,10 +45,10 @@ public class BottomWeatherFragment extends Fragment {
 
         // Init
         edInput = view.findViewById(R.id.E2);
-        tvResult = (TextView) view.findViewById(R.id.t1);
-        tvResult1 = (TextView) view.findViewById(R.id.t2);
-        tvResult2 = (TextView) view.findViewById(R.id.t3);
-        tvResult0 = (TextView) view.findViewById(R.id.t11);
+        tvResult = view.findViewById(R.id.t1);
+        tvResult1 = view.findViewById(R.id.t2);
+        tvResult2 = view.findViewById(R.id.t3);
+        tvResult0 = view.findViewById(R.id.t11);
         edInput.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -64,7 +63,9 @@ public class BottomWeatherFragment extends Fragment {
                 String city = edInput.getText().toString().trim();
 
                 RequestQueue requestQueue = Volley.newRequestQueue(requireContext());
-                @SuppressLint("SetTextI18n") JsonObjectRequest request = new JsonObjectRequest("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + appId, response -> {
+                @SuppressLint("SetTextI18n") JsonObjectRequest request =
+                        new JsonObjectRequest("https://api.openweathermap.org/data/2.5/weather?q=" + city +
+                                "&appid=" + appId, response -> {
                     try {
                         StringBuilder data = new StringBuilder();
                         StringBuilder data1 = new StringBuilder();
@@ -73,42 +74,40 @@ public class BottomWeatherFragment extends Fragment {
                         JSONObject object = response.getJSONObject("main");
                         JSONObject object1 = response.getJSONObject("wind");
                         JSONObject object2 = response.getJSONObject("clouds");
-                        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-                            object.keys().forEachRemaining(key -> {
-                                try {
-                                    Object value = object.get(key);
-                                    if (key.equals("temp_min") || key.equals("temp_max") || key.equals("temp") || key.equals("feels_like")) {
-                                        int s = (int) ((double) value - 273.15);
-                                        data.append("\n").append(key).append(" : ").append(s).append(" °C");
-                                    } else
-                                        data.append("\n").append(key).append(" : ").append(value);
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            });
-                            object1.keys().forEachRemaining(key -> {
-                                try {
-                                    Object value = object1.get(key);
-                                    data1.append("\n").append(key).append(" : ").append(value);
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            });
-                            object2.keys().forEachRemaining(key -> {
-                                try {
-                                    Object value = object2.get(key);
-                                    data2.append("\n").append(value).append("%").append(" Cloud ");
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            });
-                            Log.d("-------->", data + "\n" + data1 + "\n" + data2);
-                            tvResult.setText("No Data Found");
-                            tvResult1.setText(data1.toString());
-                            tvResult.setText(data.toString());
-                            tvResult2.setText(data2.toString());
-                            tvResult0.setText(data3.toString());
-                        }
+                        object.keys().forEachRemaining(key -> {
+                            try {
+                                Object value = object.get(key);
+                                if (key.equals("temp_min") || key.equals("temp_max") || key.equals("temp") || key.equals("feels_like")) {
+                                    int s = (int) ((double) value - 273.15);
+                                    data.append("\n").append(key).append(" : ").append(s).append(" °C");
+                                } else
+                                    data.append("\n").append(key).append(" : ").append(value);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        });
+                        object1.keys().forEachRemaining(key -> {
+                            try {
+                                Object value = object1.get(key);
+                                data1.append("\n").append(key).append(" : ").append(value);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        });
+                        object2.keys().forEachRemaining(key -> {
+                            try {
+                                Object value = object2.get(key);
+                                data2.append("\n").append(value).append("%").append(" Cloud ");
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        });
+                        Log.d("-------->", data + "\n" + data1 + "\n" + data2);
+                        tvResult.setText("No Data Found");
+                        tvResult1.setText(data1.toString());
+                        tvResult.setText(data.toString());
+                        tvResult2.setText(data2.toString());
+                        tvResult0.setText(data3.toString());
 
                     } catch (JSONException e) {
                         e.printStackTrace();

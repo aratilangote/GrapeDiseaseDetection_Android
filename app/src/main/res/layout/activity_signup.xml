@@ -10,7 +10,7 @@
         android:id="@+id/back_img"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/back_img"
+        android:background="@drawable/signup_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -19,9 +19,23 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:layout_marginTop="150dp">
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/grape_farmer"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_welcome"
+            android:layout_marginStart="10dp"
+            android:textStyle="bold"
+            android:fontFamily="@font/font_regular"
+            android:textSize="30sp"
+            android:textColor="@color/black"/>
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -32,10 +46,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="name"
+                android:fontFamily="@font/font_regular"
                 android:hint="@string/txt_enter_name"
                 android:inputType="textPersonName"
-                android:fontFamily="@font/font_regular"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -49,40 +64,51 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:autofillHints="password"
+                android:fontFamily="@font/font_regular"
                 android:hint="@string/txt_enter_pass"
                 android:inputType="textPassword"
-                android:fontFamily="@font/font_regular"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                tools:ignore="SpeakableTextPresentCheck" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_forgot_pass"
+                android:layout_gravity="end"
+                android:layout_marginEnd="5dp"/>
         </com.google.android.material.textfield.TextInputLayout>
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginHorizontal="10dp">
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/txt_phone"
-                android:layout_margin="5dp">
+                android:id="@+id/txt_phone">
 
                 <EditText
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
-
+                    android:fontFamily="@font/font_regular"
                     android:hint="@string/txt_enter_phone"
                     android:inputType="phone"
-                    android:fontFamily="@font/font_regular"
-                    android:textColor="@color/black" />
+                    android:textColor="@color/black"
+                    tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+                    android:autofillHints="phone" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="10dp"
+                android:layout_marginStart="30dp"
+                android:background="@color/green"
+                android:fontFamily="@font/font_regular"
                 android:text="@string/btn_get_otp"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textColor="@color/black"
                 android:textStyle="bold"
-                android:fontFamily="@font/font_regular"
-                android:textColor="@color/black"/>
+                tools:ignore="TouchTargetSizeCheck" />
         </LinearLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
@@ -93,10 +119,11 @@
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/font_regular"
                 android:hint="@string/txt_enter_otp"
                 android:inputType="number"
-                android:fontFamily="@font/font_regular"
-                android:textColor="@color/black" />
+                android:textColor="@color/black"
+                tools:ignore="TouchTargetSizeCheck,SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
@@ -108,10 +135,26 @@
             android:textStyle="bold"
             android:layout_margin="10dp"
             android:layout_marginTop="20dp"
-            android:background="@color/design_default_color_on_primary"
+            android:background="@color/green"
             android:fontFamily="@font/font_regular"
             android:textColor="@color/black"
             />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_or"
+            android:gravity="center_horizontal"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_signup_with"
+            android:gravity="center_horizontal"/>
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/google"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center_horizontal"/>
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
